@@ -6,6 +6,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 touch "/home/vscode/.config/nvim/packages.lua"
+mkdir -p "/home/vscode/.local/share/nvim/site/pack/"
 clone() {
     git clone "https://github.com/$1/$2" "/home/vscode/.local/share/nvim/site/pack/$2"
     echo 'vim.cmd("packadd $2")'
