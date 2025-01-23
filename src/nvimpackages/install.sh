@@ -8,59 +8,64 @@ fi
 mkdir -p /home/vscode/.config/
 
 git clone -b devcontainer https://github.com/hilmarelverhoy/nvim /home/vscode/.config/nvim
-git clone -b devcontainer https://github.com/hilmarelverhoy/nvim.git /home/vscode/.config/nvim
-mkdir -p "/home/vscode/.local/share/nvim/site/pack/"
-mkdir -p "/home/vscode/.local/state"
+git clone https://github.com/hilmarelverhoy/nvim.git /home/vscode/.config/nvim
+git clone https://github.com/hilmarelverhoy/nvim.git /home/vscode/
+git clone https://github.com/hilmarelverhoy/nvim.git
 
+mkdir -p /home/vscode/.local/share/nvim/site/pack/
+mkdir -p /home/vscode/.local/state
+if test -d "/home/vscode/nvim"; then
+	touch /home/vscode/file_exists
+fi
 clone() {
     git clone "https://github.com/$1/$2" "/home/vscode/.local/share/nvim/site/pack/$2"
-    echo 'vim.cmd("packadd $2")' >> /home/vscode/.config/nvim/lua/hilmare/packer.lua
+    echo "vim.cmd('packadd $2')" >> /home/vscode/.config/nvim/lua/hilmare/packer.lua
 }
 
-clone 'hilmarelverhoy' 'nvim.git'
-clone 'nvim-lua' 'plenary.nvim'
-clone 'nvim-telescope' 'telescope.nvim'
-clone 'nvim-lua' 'plenary.nvim'
-clone 'nvim-treesitter' 'nvim-treesitter'
 clone 'EdenEast' 'nightfox.nvim'
-clone 'nvim-neotest' 'nvim-nio'
 clone 'Issafalcon' 'neotest-dotnet'
+clone 'L3MON4D3' 'LuaSnip'
 clone 'antoinemadec' 'FixCursorHold.nvim'
+clone 'hilmarelverhoy' 'nvim.git'
 clone 'hrsh7th' 'cmp-buffer'
-clone 'hrsh7th' 'cmp-path'
-clone 'saadparwaiz1' 'cmp_luasnip'
 clone 'hrsh7th' 'cmp-nvim-lsp'
 clone 'hrsh7th' 'cmp-nvim-lua'
-clone 'L3MON4D3' 'LuaSnip'
-clone 'rafamadriz' 'friendly-snippets'
-
-clone 'ThePrimeagen' 'vim-be-good'
-clone 'mracos' 'mermaid.vim'
-clone 'wbthomason' 'packer.nvim'
-clone 'seblj' 'roslyn.nvim'
+clone 'hrsh7th' 'cmp-path'
+clone 'nvim-lua' 'plenary.nvim'
+clone 'nvim-lua' 'plenary.nvim'
+clone 'nvim-neotest' 'nvim-nio'
 clone 'nvim-telescope' 'telescope.nvim'
-clone 'nvim-telescope' 'telescope-project.nvim'
-clone 'sindrets' 'diffview.nvim'
+clone 'nvim-treesitter' 'nvim-treesitter'
+clone 'rafamadriz' 'friendly-snippets'
+clone 'saadparwaiz1' 'cmp_luasnip'
+
+clone 'EdenEast' 'nightfox.nvim'
+clone 'RRethy' 'nvim-treesitter-textsubjects'
+clone 'ThePrimeagen' 'vim-be-good'
+clone 'andymass' 'vim-matchup'
+clone 'danymat' 'neogen'
+clone 'farmergreg' 'vim-lastplace'
+clone 'hrsh7th' 'nvim-cmp'
+clone 'mracos' 'mermaid.vim'
+clone 'neovim' 'nvim-lspconfig'
 clone 'nvim-telescope' 'telescope-file-browser.nvim'
+clone 'nvim-telescope' 'telescope-project.nvim'
+clone 'nvim-telescope' 'telescope.nvim'
+clone 'nvim-tree' 'nvim-web-devicons'
 clone 'nvim-treesitter' 'nvim-treesitter-refactor'
 clone 'nvim-treesitter' 'nvim-treesitter-textobjects'
-clone 'RRethy' 'nvim-treesitter-textsubjects'
-clone 'danymat' 'neogen'
+clone 'seblj' 'roslyn.nvim'
+clone 'sindrets' 'diffview.nvim'
+clone 'tmadsen' 'vim-compiler-plugin-for-dotnet'
+clone 'tpope' 'vim-abolish'
+clone 'tpope' 'vim-commentary'
 clone 'tpope' 'vim-dispatch'
 clone 'tpope' 'vim-fugitive'
-clone 'tpope' 'vim-commentary'
-clone 'tpope' 'vim-abolish'
 clone 'tpope' 'vim-repeat'
 clone 'tpope' 'vim-surround'
-clone 'farmergreg' 'vim-lastplace'
-clone 'tmadsen' 'vim-compiler-plugin-for-dotnet'
-clone 'nvim-tree' 'nvim-web-devicons'
-clone 'williamboman' 'mason.nvim'
+clone 'wbthomason' 'packer.nvim'
 clone 'williamboman' 'mason-lspconfig.nvim'
-clone 'neovim' 'nvim-lspconfig'
-clone 'hrsh7th' 'nvim-cmp'
-clone 'andymass' 'vim-matchup'
-clone 'EdenEast' 'nightfox.nvim'
+clone 'williamboman' 'mason.nvim'
 
 chown -R vscode /home/vscode/.local/state
 chown -R vscode /home/vscode/.config
