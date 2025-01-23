@@ -5,8 +5,9 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-git clone -b devcontainer git@github.com:hilmarelverhoy/nvim.git /home/vscode/.config/nvim
+git clone -b devcontainer https://github.com/hilmarelverhoy/nvim /home/vscode/.config/nvim
 mkdir -p "/home/vscode/.local/share/nvim/site/pack/"
+mkdir -p "/home/vscode/.local/state"
 clone() {
     git clone "https://github.com/$1/$2" "/home/vscode/.local/share/nvim/site/pack/$2"
     echo 'vim.cmd("packadd $2")' >> /home/vscode/.config/nvim/lua/hilmare/packer.lua
