@@ -9,13 +9,11 @@ mkdir -p /home/vscode/.config/
 
 git clone -b devcontainer https://github.com/hilmarelverhoy/nvim /home/vscode/.config/nvim
 git clone https://github.com/hilmarelverhoy/nvim.git /home/vscode/.config/nvim
-git clone https://github.com/hilmarelverhoy/nvim.git /home/vscode/
-git clone https://github.com/hilmarelverhoy/nvim.git
 
 mkdir -p /home/vscode/.local/share/nvim/site/pack/
 mkdir -p /home/vscode/.local/state
 if test -d "/home/vscode/nvim"; then
-	touch /home/vscode/file_exists
+
 fi
 clone() {
     git clone "https://github.com/$1/$2" "/home/vscode/.local/share/nvim/site/pack/$2"
@@ -32,14 +30,12 @@ clone 'hrsh7th' 'cmp-nvim-lsp'
 clone 'hrsh7th' 'cmp-nvim-lua'
 clone 'hrsh7th' 'cmp-path'
 clone 'nvim-lua' 'plenary.nvim'
-clone 'nvim-lua' 'plenary.nvim'
 clone 'nvim-neotest' 'nvim-nio'
 clone 'nvim-telescope' 'telescope.nvim'
 clone 'nvim-treesitter' 'nvim-treesitter'
 clone 'rafamadriz' 'friendly-snippets'
 clone 'saadparwaiz1' 'cmp_luasnip'
 
-clone 'EdenEast' 'nightfox.nvim'
 clone 'RRethy' 'nvim-treesitter-textsubjects'
 clone 'ThePrimeagen' 'vim-be-good'
 clone 'andymass' 'vim-matchup'
@@ -50,7 +46,6 @@ clone 'mracos' 'mermaid.vim'
 clone 'neovim' 'nvim-lspconfig'
 clone 'nvim-telescope' 'telescope-file-browser.nvim'
 clone 'nvim-telescope' 'telescope-project.nvim'
-clone 'nvim-telescope' 'telescope.nvim'
 clone 'nvim-tree' 'nvim-web-devicons'
 clone 'nvim-treesitter' 'nvim-treesitter-refactor'
 clone 'nvim-treesitter' 'nvim-treesitter-textobjects'
@@ -71,4 +66,4 @@ chown -R vscode /home/vscode/.local/state
 chown -R vscode /home/vscode/.config
 
 #cp configuration to .config
-echo "Done!"
+echo "Done!"`
