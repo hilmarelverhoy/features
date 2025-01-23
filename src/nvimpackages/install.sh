@@ -8,13 +8,10 @@ fi
 mkdir -p /home/vscode/.config/
 
 git clone -b devcontainer https://github.com/hilmarelverhoy/nvim /home/vscode/.config/nvim
-git clone https://github.com/hilmarelverhoy/nvim.git /home/vscode/.config/nvim
 
 mkdir -p /home/vscode/.local/share/nvim/site/pack/
 mkdir -p /home/vscode/.local/state
-if test -d "/home/vscode/nvim"; then
 
-fi
 clone() {
     git clone "https://github.com/$1/$2" "/home/vscode/.local/share/nvim/site/pack/$2"
     echo "vim.cmd('packadd $2')" >> /home/vscode/.config/nvim/lua/hilmare/packer.lua
@@ -62,7 +59,7 @@ clone 'wbthomason' 'packer.nvim'
 clone 'williamboman' 'mason-lspconfig.nvim'
 clone 'williamboman' 'mason.nvim'
 
-chown -R vscode /home/vscode/.local/state
+chown -R vscode /home/vscode/.local
 chown -R vscode /home/vscode/.config
 
 #cp configuration to .config
