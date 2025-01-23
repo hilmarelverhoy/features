@@ -63,4 +63,4 @@ chown -R vscode /home/vscode/.local
 chown -R vscode /home/vscode/.config
 
 #cp configuration to .config
-echo "Done!"`
+echo "Done!"
