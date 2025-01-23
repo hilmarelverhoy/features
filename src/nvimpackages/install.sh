@@ -13,7 +13,7 @@ mkdir -p /home/vscode/.local/share/nvim/site/pack/
 mkdir -p /home/vscode/.local/state
 
 clone() {
-    git clone "https://github.com/$1/$2" "/home/vscode/.local/share/nvim/site/pack/$2"
+    git clone "https://github.com/$1/$2" "/home/vscode/.local/share/nvim/site/pack/devcontainer/$2"
     echo "vim.cmd('packadd $2')" >> /home/vscode/.config/nvim/lua/hilmare/packer.lua
 }
 
