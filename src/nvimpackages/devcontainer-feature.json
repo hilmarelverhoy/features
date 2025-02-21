@@ -1,6 +1,6 @@
 {
     "id": "nvimpackages",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "name": "Nvim plugins (hilmar)",
     "description": "Nvim plugins for hilmars config",
     "options": {
